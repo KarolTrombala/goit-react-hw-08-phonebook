@@ -24,7 +24,7 @@ export const RegisterForm = () => {
 
     return (
         <form className={css.form} onSubmit={handleSubmit}>
-            <label className="label">
+            <label className={css.label}>
                 Username
                 <input type="text" name="name" />
             </label>
@@ -36,7 +36,7 @@ export const RegisterForm = () => {
                 Password
                 <input type="password" name="password" />
             </label>
-            <button className={css.btn-register} type="submit">
+            <button className={css.btn} type="submit">
                 Register
             </button>
         </form>

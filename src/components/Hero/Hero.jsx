@@ -6,7 +6,7 @@ export const Hero = () => {
     return (
         <>
             <NavLink className={css.hero} to="/register">
-                PhoneMe!
+                My Phonebook
             </NavLink>
         </>
     )
