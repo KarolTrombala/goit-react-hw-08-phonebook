@@ -1,44 +1,89 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom'
+import { lazy, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
-import { fetchContacts } from '../redux/operations';
-import { selectError, selectIsLoading } from '../redux/selectors';
+import { useAuth } from 'hooks/useAuth'
+import { refreshUser } from 'redux/auth/operations'
+import { fetchContacts } from '../redux/operations'
 
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
+import { Layout } from 'components/Layout/Layout'
+import { RestrictedRoute } from 'components/RestrictedRoute/RestrictedRoute'
+import { PrivateRoute } from 'components/PrivateRoute/PrivateRoute'
 
+const HomePage = lazy(() => import('./pages/Home/Home'))
+const RegisterPage = lazy(() => import('./pages/Register/Register'))
+const LoginPage = lazy(() => import('./pages/Login/Login'))
+const ContactsPage = lazy(() => import('./pages/Contacts/Contacts'))
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+    const dispatch = useDispatch()
+    const { isLoggedIn, isRefreshing } = useAuth();
+    // const isLoading = useSelector(selectIsLoading)
+    // const error = useSelector(selectError)
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-  
-  
-  return (
-    <div
-      style={{
-        marginTop: 100,
-        marginLeft: 100,
-        height: '100vh',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 20,
-        color: '#010101',
-      }}
-    >
-      <h1>Phonebook</h1>
+    // useEffect(() => {
+    //     dispatch(fetchContacts())
+    // }, [dispatch])
 
-      <ContactForm />
-      {isLoading && !error && <b>Request in progress...</b>}
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList />
-      {error && <p>Error, could not load.</p>}
-    </div>
-  )
+    useEffect(() => {
+        dispatch(refreshUser())
+        if (isLoggedIn) dispatch(fetchContacts())
+    }, [dispatch, isLoggedIn])
+    
+
+return isRefreshing ? (
+    <div>Refreshing user...</div>
+  ) : (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegisterPage />}
+            />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
+
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+          }
+        />
+      </Route>
+    </Routes>
+  );
 };
+
+//     return (
+//         <div
+//             style={{
+//                 marginTop: 100,
+//                 marginLeft: 100,
+//                 height: '100vh',
+//                 justifyContent: 'center',
+//                 alignItems: 'center',
+//                 fontSize: 20,
+//                 color: '#010101',
+//             }}
+//         >
+//             <h1>Phonebook</h1>
+
+//             <ContactForm />
+//             {isLoading && !error && <b>Request in progress...</b>}
+//             <h2>Contacts</h2>
+//             <Filter />
+//             <ContactList />
+//             {error && <p>Error, could not load.</p>}
+//         </div>
+//     )
+// }
