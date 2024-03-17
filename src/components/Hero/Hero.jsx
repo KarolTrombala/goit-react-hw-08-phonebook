@@ -1,5 +1,4 @@
 import css from './Hero.module.css';
-
 import { NavLink } from 'react-router-dom';
 
 export const Hero = () => {
