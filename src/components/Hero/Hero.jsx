@@ -1,6 +1,6 @@
-import './Hero.module.css'
+import './Hero.module.css';
 
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 export const Hero = () => {
     return (
@@ -10,4 +10,4 @@ export const Hero = () => {
             </NavLink>
         </>
     )
-}
+};

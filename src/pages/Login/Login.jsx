@@ -1,8 +1,8 @@
-import './Login.module.css'
+import './Login.module.css';
 
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet';
 
-import { LoginForm } from 'components/LoginForm/LoginForm'
+import { LoginForm } from 'components/LoginForm/LoginForm';
 
 const Login = () => (
     <div className={css.login}>
@@ -11,5 +11,5 @@ const Login = () => (
         </Helmet>
         <LoginForm />
     </div>
-)
+);
 export default Login

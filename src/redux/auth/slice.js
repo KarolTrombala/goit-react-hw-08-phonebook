@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { register, logIn, logOut, refreshUser } from './operations'
+import { register, logIn, logOut, refreshUser } from './operations';
 
 const initialState = {
     user: {
@@ -43,6 +43,6 @@ const authSlice = createSlice({
             state.isRefreshing = false
         },
     },
-})
+});
 
 export const authReducer = authSlice.reducer

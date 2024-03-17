@@ -1,8 +1,8 @@
-import './RegisterForm.module.css'
+import './RegisterForm.module.css';
 
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 
-import { register } from 'redux/auth/operations'
+import { register } from '../../redux/auth/operations';
 
 export const RegisterForm = () => {
     const dispatch = useDispatch()

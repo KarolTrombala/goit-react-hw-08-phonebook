@@ -1,8 +1,8 @@
-import './Home.module.css'
+import './Home.module.css';
 
-import React from 'react'
+import React from 'react';
 
-import { Hero } from 'components/Hero/Hero'
+import { Hero } from 'components/Hero/Hero';
 
 const Home = () => (
     <div className={css.container}>

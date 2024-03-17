@@ -1,9 +1,9 @@
-import './Layout.module.css'
+import './Layout.module.css';
 
-import { Suspense } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
-import { AppBar } from 'components/AppBar/AppBar'
+import { AppBar } from 'components/AppBar/AppBar';
 
 export const Layout = () => {
     return (
@@ -14,4 +14,4 @@ export const Layout = () => {
             </Suspense>
         </div>
     )
-}
+};

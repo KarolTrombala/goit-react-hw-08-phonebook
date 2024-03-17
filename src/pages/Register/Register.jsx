@@ -1,8 +1,8 @@
-import './Register.module.css'
+import './Register.module.css';
 
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet';
 
-import { RegisterForm } from 'components/RegisterForm/RegisterForm'
+import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 
 const Register = () => (
     <div className={css.register}>
@@ -11,5 +11,5 @@ const Register = () => (
         </Helmet>
         <RegisterForm />
     </div>
-)
+);
 export default Register
