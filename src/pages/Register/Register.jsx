@@ -1,4 +1,4 @@
-import './Register.module.css';
+import css from './Register.module.css';
 
 import { Helmet } from 'react-helmet';
 

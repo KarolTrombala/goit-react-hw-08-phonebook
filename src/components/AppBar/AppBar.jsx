@@ -1,4 +1,4 @@
-import './AppBar.module.css';
+import css from'./AppBar.module.css';
 
 import { useAuth } from 'hooks/useAuth';
 

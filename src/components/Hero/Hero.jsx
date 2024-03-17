@@ -1,4 +1,4 @@
-import './Hero.module.css';
+import css from './Hero.module.css';
 
 import { NavLink } from 'react-router-dom';
 

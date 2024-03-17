@@ -1,8 +1,6 @@
-import './Layout.module.css';
-
+import css from './Layout.module.css';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-
 import { AppBar } from 'components/AppBar/AppBar';
 
 export const Layout = () => {

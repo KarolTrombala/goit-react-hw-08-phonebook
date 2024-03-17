@@ -1,4 +1,4 @@
-import './Login.module.css';
+import css from './Login.module.css';
 
 import { Helmet } from 'react-helmet';
 

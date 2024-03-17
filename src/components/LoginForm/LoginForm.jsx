@@ -1,4 +1,4 @@
-import './LoginForm.module.css';
+import css from './LoginForm.module.css';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
 
@@ -29,7 +29,7 @@ export const LoginForm = () => {
                 Password
                 <input type="password" name="password" />
             </label>
-            <button className={css.btn-login} type="submit">
+            <button className={css.buttonLog} type="submit">
                 Log in
             </button>
         </form>

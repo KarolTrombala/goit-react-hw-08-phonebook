@@ -8,7 +8,7 @@
   margin-bottom: 16px;
 }
 
-.btn-login {
+.buttonLog {
   width: 100px;
   background-color: var(--accent);
   color: var(--light-color);
@@ -19,6 +19,6 @@
   margin-top: 20px;
   transition: all 1s;
 }
-.btn-login:hover {
+.buttonLog:hover {
   background-color: var(--dark-color);
 }

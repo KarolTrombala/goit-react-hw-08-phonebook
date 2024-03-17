@@ -1,4 +1,4 @@
-import './RegisterForm.module.css';
+import css from'./RegisterForm.module.css';
 
 import { useDispatch } from 'react-redux';
 
