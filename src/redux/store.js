@@ -1,7 +1,7 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 
-import { contactsReducer } from './contactsSlice';
-import { filtersReducer } from './filtersSlice';
+import { contactsReducer } from './contactsSlice'
+import { filtersReducer } from './filterSlice'
 
 import {
     persistStore,
@@ -13,8 +13,8 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist'
-import storage from 'redux-persist/lib/storage';
-import { authReducer } from './auth/slice';
+import storage from 'redux-persist/lib/storage'
+import { authReducer } from './auth/slice'
 
 const middleware = [
     ...getDefaultMiddleware({
