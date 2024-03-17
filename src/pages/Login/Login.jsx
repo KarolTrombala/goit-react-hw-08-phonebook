@@ -1,7 +1,5 @@
 import css from './Login.module.css';
-
 import { Helmet } from 'react-helmet';
-
 import { LoginForm } from 'components/LoginForm/LoginForm';
 
 const Login = () => (
@@ -12,4 +10,5 @@ const Login = () => (
         <LoginForm />
     </div>
 );
+
 export default Login

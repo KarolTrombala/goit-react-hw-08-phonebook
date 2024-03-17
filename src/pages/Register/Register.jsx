@@ -1,7 +1,5 @@
 import css from './Register.module.css';
-
 import { Helmet } from 'react-helmet';
-
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 
 const Register = () => (
@@ -12,4 +10,5 @@ const Register = () => (
         <RegisterForm />
     </div>
 );
+
 export default Register

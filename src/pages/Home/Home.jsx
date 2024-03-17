@@ -1,7 +1,5 @@
 import css from './Home.module.css';
-
 import React from 'react';
-
 import { Hero } from 'components/Hero/Hero';
 
 const Home = () => (
@@ -12,4 +10,5 @@ const Home = () => (
         <Hero />
     </div>
 );
+
 export default Home
